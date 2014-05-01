@@ -1,4 +1,5 @@
 ActiveAdmin.register Client do
+  actions :all, :except => [:destroy]
 
   
   # See permitted parameters documentation:

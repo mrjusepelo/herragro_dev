@@ -1,4 +1,5 @@
 ActiveAdmin.register WeekClient do
+  actions :all, :except => [:destroy]
 
   
   # See permitted parameters documentation:
