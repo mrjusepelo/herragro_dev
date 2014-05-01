@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  week_id: 
+  client_id: 
+  comment: MyText
+
+two:
+  week_id: 
+  client_id: 
+  comment: MyText

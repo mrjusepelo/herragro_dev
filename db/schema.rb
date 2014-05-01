@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501023745) do
+ActiveRecord::Schema.define(version: 20140501030241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,5 +48,85 @@ ActiveRecord::Schema.define(version: 20140501023745) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.integer  "department_id"
+    t.integer  "zone_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["department_id"], name: "index_cities_on_department_id", using: :btree
+  add_index "cities", ["zone_id"], name: "index_cities_on_zone_id", using: :btree
+
+  create_table "clients", force: true do |t|
+    t.string   "name"
+    t.string   "nit"
+    t.string   "phone"
+    t.string   "cellphone"
+    t.string   "address"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "clients", ["city_id"], name: "index_clients_on_city_id", using: :btree
+
+  create_table "departments", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "lastname"
+    t.string   "document"
+    t.string   "code"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "week_categories", force: true do |t|
+    t.integer  "week_id"
+    t.integer  "category_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "week_categories", ["category_id"], name: "index_week_categories_on_category_id", using: :btree
+  add_index "week_categories", ["week_id"], name: "index_week_categories_on_week_id", using: :btree
+
+  create_table "week_clients", force: true do |t|
+    t.integer  "week_id"
+    t.integer  "client_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "week_clients", ["client_id"], name: "index_week_clients_on_client_id", using: :btree
+  add_index "week_clients", ["week_id"], name: "index_week_clients_on_week_id", using: :btree
+
+  create_table "weeks", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "zones", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
