@@ -1,4 +1,11 @@
 HerragroDev::Application.routes.draw do
+  get "reports/index"
+  get "reports/new"
+  get "reports/edit"
+  get "reports/create"
+  get "reports/show"
+  get "reports/update"
+  get "reports/destroy"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.

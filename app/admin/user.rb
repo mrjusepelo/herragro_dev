@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
   actions :all, :except => [:destroy]
+  permit_params :name, :nit, :lastname, :document, :code, :user_id
 
   
   # See permitted parameters documentation:

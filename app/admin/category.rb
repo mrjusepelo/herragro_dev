@@ -1,5 +1,7 @@
 ActiveAdmin.register Category do
   actions :all, :except => [:destroy]
+  permit_params :name 
+  # permit_params :title, :score, :visits_count, :number_of_pages, :version, :objective, :category, :category_id, 
 
   
   # See permitted parameters documentation:

@@ -1,5 +1,6 @@
 ActiveAdmin.register Client do
   actions :all, :except => [:destroy]
+  permit_params :name, :nit, :phone, :cellphone, :address, :city_id
 
   
   # See permitted parameters documentation:

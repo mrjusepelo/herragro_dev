@@ -1,5 +1,6 @@
 ActiveAdmin.register Zone do
   actions :all, :except => [:destroy]
+  permit_params :name
 
   
   # See permitted parameters documentation:

@@ -1,5 +1,7 @@
 ActiveAdmin.register WeekClient do
   actions :all, :except => [:destroy]
+  permit_params :week_id, :client_id, :comment
+  menu false
 
   
   # See permitted parameters documentation:

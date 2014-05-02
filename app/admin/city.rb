@@ -1,5 +1,6 @@
 ActiveAdmin.register City do
   actions :all, :except => [:destroy]
+  permit_params :name, :department_id, :zone_id
 
   
   # See permitted parameters documentation:

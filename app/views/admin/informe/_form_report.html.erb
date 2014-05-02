@@ -1,0 +1,52 @@
+<%#= form_tag( method: "get", url: {controller: "/reports", action: "create" }) do %>
+
+  <%#= label_tag(:q, "Tipo reporte:") %>
+  <!-- <br> -->
+  <%#= select_tag(:type, '<option value="1">Cliente</option><option value="2">Vendedor</option>
+  <option value="3">Categoria</option><option value="4">Ciudad</option>'.html_safe) %>
+ <!-- <br> 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br> -->
+  <%#= label_tag(:x, "Rango de Fechas:") %>
+  <!-- <br>
+	 <input type="text" placeholder="Fecha Inicial" name="pin" maxlength="4" size="4" id ="1" class="12" style="width:100px;">
+	 <input type="text" placeholder="Fecha Final" name="pin" maxlength="4" size="4" id ="1" class="12" style="width:100px;">
+  <br>
+  <br> -->
+  <%#= submit_tag("Generar") %>
+<%# end %>
+
+
+
+
+<form accept-charset="UTF-8" action="/admin/users" class="formtastic user" id="new_user" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="Lm3llJj/Udb5Uok7Q+9fjRXkjoEW9xWhQ3S4cO+p8Fk="></div><fieldset class="inputs"><ol>
+
+<li class="select input optional" id="city_department_input"><label class="label" for="city_department_id">Tipo de Reporte</label>
+<fieldset data-role="controlgroup" data-type="horizontal">
+	<select  size="6" id="city_department_id" name="city[department_id]">
+	<option value=""></option><option value="4">Cliente</option>
+	<option value="5">Vendedor</option>
+	<option value="6">Categoria</option>
+	<option value="6">Ciudad</option>
+
+</select>
+</fieldset>
+
+</li>
+  <!-- <br> -->
+  <!-- <br> -->
+  <!-- <br> -->
+  <br>
+</li><li class="string input optional stringish" id="user_lastname_input"><label class="label" for="user_lastname">Rango de Fechas</label>
+<!-- <input id="user_lastname" maxlength="255" name="user[lastname]" type="text"> -->
+	 <input type="text" placeholder="Fecha Inicial" name="pin" maxlength="4" size="4" id ="1" class="12" style="width:100px;">
+	 <input type="text" placeholder="Fecha Final" name="pin" maxlength="4" size="4" id ="1" class="12" style="width:100px;">
+
+
+
+</li></ol></fieldset><fieldset class="actions"><ol><li class="action input_action " id="user_submit_action"><input name="commit" type="submit" value="Generar"></li><li class="cancel"><a href="/admin/users">Cancelar</a></li></ol></fieldset></form>
